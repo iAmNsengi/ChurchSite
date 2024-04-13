@@ -38,7 +38,6 @@
                     <span style="color: rgb(241, 61, 61);" id="passwordError" class=""></span>
                 </div>
                 <button type="submit" class="btn">Sign Up</button>
-                <small>Already have an account? <a href="login.php">Login</a></small>
             </form>
 
 
