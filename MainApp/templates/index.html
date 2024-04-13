@@ -166,7 +166,7 @@
                 </div>
                 <div class="welcome__video">
                     <video
-                        src="./assets/images/VIDEO-2024-03-29-23-35-32.mp4"
+                        src="{% static 'assets/images/VIDEO-2024-03-29-23-35-32.mp4' %}"
                         controls
                         autoplay
                         muted
@@ -184,16 +184,16 @@
             </p>
             <div class="class__grid">
                 <div class="class__card">
-                    <img src="assets/images/ecodim.jpg" alt="">
+                    <img src="{% static 'assets/images/ecodim.jpg'%}" alt="">
                 </div>
                 <div class="class__card">
-                    <img src="assets/images/ecodim.jpg" alt="">
+                    <img src="{% static 'assets/images/ecodim.jpg'%}" alt="">
                 </div>
                 <div class="class__card">
-                    <img src="assets/images/ecodim.jpg" alt="">
+                    <img src="{% static 'assets/images/ecodim.jpg'%}" alt="">
                 </div>
                 <div class="class__card">
-                    <img src="assets/images/ecodim.jpg" alt="">
+                    <img src="{% static 'assets/images/ecodim.jpg' %}" alt="">
                 </div>
             </div>
         </section>
@@ -207,7 +207,7 @@
             </p>
             <div class="trainer__grid">
                 <div class="trainer__card">
-                    <img src="assets/images/event3.jpg" alt="">
+                    <img src="{%static 'assets/images/event3.jpg' %}" alt="">
                 </div>
                 <div class="trainer__card">
                     <div class="trainer__content">
@@ -235,7 +235,7 @@
                     </div>
                 </div>
                 <div class="trainer__card">
-                    <img src="assets/images/event.jpg " alt="">
+                    <img src="{%static 'assets/images/event.jpg' %} " alt="">
                 </div>
                 <div class="trainer__card">
                     <div class="trainer__content">
@@ -588,8 +588,8 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-    <script src="./assets/js/lightbox-plus-jquery.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'assets/js/lightbox-plus-jquery.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
     <script>
 
         var isVideoPlaying = false;
