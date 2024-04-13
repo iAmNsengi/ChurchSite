@@ -1,0 +1,621 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="sr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="{%static 'assets/css/lightbox.css' %}">
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <style>
+        swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+        </style>
+        <title>Eglise MAT</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav>
+                <div class="nav__header">
+                    <div class="nav__logo">
+                        <a href="#">
+                            <img src="{%static 'assets/images/logo22.png' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="nav__menu__btn" id="menu-btn">
+                        <span>
+                            <i class="ri-menu-3-line"></i>
+                        </span>
+                    </div>
+                </div>
+                <ul class="nav__links" id="nav-links">
+                    <li class="link">
+                        <a href="#home">Accueil</a>
+                    </li>
+                    <li class="link">
+                        <a href="#about">Apropos de nous</a>
+                    </li>
+                    <li class="link">
+                        <a href="#trainers">Evemenent</a>
+                    </li>
+                    <li class="link">
+                        <a href="#pricing">Programmes</a>
+                    </li>
+                    <li class="link">
+                        <a href="faireundon.html">faire un Don</a>
+                    </li>
+                    <li class="link">
+                        <a href="#contact" class="btn">Contactez nous</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="section__container header__container" id="home">
+                <div class="header__content">
+                    <h1 class="section__header">
+                        La Mission des
+                        <span class="typing-text">
+                            Ambassadeurs pour la
+                        Tranformation
+                        </span>
+                    </h2>
+                    <h4>Eglise MAT</h4>
+                    <div class="header__btn">
+                        <button class="btn" id="liveButton">Suivre le Directe</button>
+                    </div>
+                </div>
+            </div>
+            <div id="videoPopup" class="popup">
+                <div id="liveVideo" class="video">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/vOtWKocW5n4?si=D4npwI6zuS9TFlPg"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <button id="closeButton">
+                    <i class="ri-close-large-line"></i>
+                </button>
+            </div>
+        </header>
+        <section class="section__container about__container" id="about">
+            <div class="about__image">
+                <img src="./assets/images/IMG_0951.png" alt="About Image">
+            </div>
+            <div class="about__content">
+                <h2 class="section__header">
+                    Qui nous sommes
+                </h2>
+                <p class="section__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quibusdam voluptatibus alias non
+                officiis error nihil. Laudantium voluptatum et harum! Quam quas cupiditate voluptatibus, nesciunt dolore
+                ad exercitationem. Obcaecati itaque vero harum quas ex et vel omnis accusantium placeat molestias!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus neque ab quibusdam nemo, ipsa
+                possimus vel
+                </p>
+                <div class="about__grid">
+                    <div class="about__card">
+                        <span>
+                            <i class="ri-open-arm-line"></i>
+                        </span>
+                        <div>
+                            <h4>Notre vision</h4>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet autem a mollitia
+                            voluptatem repellendus voluptas optio reiciendis sint!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__card">
+                        <span>
+                            <i class="ri-shake-hands-fill"></i>
+                        </span>
+                        <div>
+                            <h4>Notre mission</h4>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet autem a mollitia
+                            voluptatem repellendus voluptas optio reiciendis sint!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__card">
+                        <span>
+                            <i class="ri-p2p-line"></i>
+                        </span>
+                        <div>
+                            <h4>Nos objectif</h4>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet autem a mollitia
+                            voluptatem repellendus voluptas optio reiciendis sint!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__container welcome__message">
+            <h2 class="section__header">Le message du pasteur principal</h2>
+            <div class="welcome__message__content">
+                <div class="welcome__description">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum hic dolores pariatur laboriosam,
+                    mollitia perspiciatis quis autem facere, exercitationem commodi quam dignissimos rerum reiciendis
+                    veritatis esse ea nulla magni nobis.
+                    </p>
+                </div>
+                <div class="welcome__video">
+                    <video
+                        src="./assets/images/VIDEO-2024-03-29-23-35-32.mp4"
+                        controls
+                        autoplay
+                        muted
+                    ></video>
+                </div>
+            </div>
+        </section>
+        <section class="section__container class__container" id="class">
+            <h2 class="section__header">Nos departements</h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde fugit voluptatibus consectetur hic dolores
+            harum, accusamus, reprehenderit sequi quis iure debitis deserunt. Omnis quae porro dignissimos quasi
+            expedita veniam architecto quas cupiditate vel. Facilis obcaecati, nam illo impedit veritatis reprehenderit,
+            asperiores officiis tempore quas culpa neque autem consectetur, cum modi.
+            </p>
+            <div class="class__grid">
+                <div class="class__card">
+                    <img src="assets/images/ecodim.jpg" alt="">
+                </div>
+                <div class="class__card">
+                    <img src="assets/images/ecodim.jpg" alt="">
+                </div>
+                <div class="class__card">
+                    <img src="assets/images/ecodim.jpg" alt="">
+                </div>
+                <div class="class__card">
+                    <img src="assets/images/ecodim.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section_container trainer__container" id="trainers">
+            <h2 class="section__header">Les activite a venir</h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas
+            repellendus sit necessitatibus consectetur labore!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ad doloremque magni modi voluptate facilis
+            ipsa dolor saepe similique optio!
+            </p>
+            <div class="trainer__grid">
+                <div class="trainer__card">
+                    <img src="assets/images/event3.jpg" alt="">
+                </div>
+                <div class="trainer__card">
+                    <div class="trainer__content">
+                        <h4>Apres la montagne</h4>
+                        <h5>Programme special d'enseignement</h5>
+                        <hr>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis ipsum quae culpa
+                        nemo molestias?
+                        </p>
+                        <div class="trainer__socials">
+                            <a href="#" class="facebook">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="google">
+                                <i class="ri-google-fill"></i>
+                            </a>
+                            <a href="#" class="instagram">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="#" class="twitter">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer__card">
+                    <img src="assets/images/event.jpg " alt="">
+                </div>
+                <div class="trainer__card">
+                    <div class="trainer__content">
+                        <h4>soiree de la traversee</h4>
+                        <h5>moment d'action de grace et de dedicace</h5>
+                        <hr>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis ipsum quae culpa
+                        nemo molestias?
+                        </p>
+                        <div class="trainer__socials">
+                            <a href="#" class="facebook">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="google">
+                                <i class="ri-google-fill"></i>
+                            </a>
+                            <a href="#" class="instagram">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="#" class="twitter">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer__card">
+                    <img src="assets/images/events.jpg" alt="">
+                </div>
+                <div class="trainer__card">
+                    <div class="trainer__content">
+                        <h4>Losambo 21</h4>
+                        <h5>seminaire de jeune et priere</h5>
+                        <hr>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis ipsum quae culpa
+                        nemo molestias?
+                        </p>
+                        <div class="trainer__socials">
+                            <a href="#" class="facebook">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="google">
+                                <i class="ri-google-fill"></i>
+                            </a>
+                            <a href="#" class="instagram">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="#" class="twitter">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__container price__container" id="pricing">
+            <h2 class="section__header">
+                Notre Programme hedomadaire
+            </h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui et laudantium natus repellat culpa harum
+            at vero minus odit, sit in, minima, iste vitae!
+            </p>
+            <div class="price__grid">
+                <div class="price__card">
+                    <div class="price__content">
+                        <h4>Culte dominical</h4>
+                        <img src="assets/images/pricing1.png" alt="price">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda modi delectus recusandae</p>
+                        <hr>
+                        <h4>Informtion detailee</h4>
+                        <p>De 8h a 9h Reunion de l'ECODIM</p>
+                        <p>De 9h a 11h Reunion des Ambassadeurs</p>
+                    </div>
+                    <button class="btn">Vous etes les Bienvenu</button>
+                </div>
+                <div class="price__card">
+                    <div class="price__content">
+                        <h4>Soiree de Gloire</h4>
+                        <img src="assets/images/pricing2.png" alt="price">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda modi delectus recusandae</p>
+                        <hr>
+                        <h4>Service details</h4>
+                        <p>Every thursday</p>
+                        <p>from 3pm to 6pm</p>
+                    </div>
+                </div>
+                <div class="price__card">
+                    <div class="price__content">
+                        <h4>Open heaven service</h4>
+                        <img src="assets/images/pricing3.png" alt="price">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda modi delectus recusandae</p>
+                        <hr>
+                        <h4>Service details</h4>
+                        <p>PRAYER & PROPHECY</p>
+                        <p>Every Wesnday ans Saturday</p>
+                        <p>from 9am to 12 am</p>
+                    </div>
+                    <button class="btn">Welcome</button>
+                </div>
+            </div>
+        </section>
+        <section class="section_container gallery-quotes">
+            <h2 class="section__header">Thoughts of the Week</h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas
+            repellendus sit necessitatibus consectetur labore!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ad doloremque magni modi voluptate facilis
+            ipsa dolor saepe similique optio!
+            </p>
+            <div class="thought-container">
+                <swiper-container
+                    class="mySwiper"
+                    pagination="true"
+                    effect="coverflow"
+                    grab-cursor="true"
+                    centered-slides="true"
+                    slides-per-view="auto"
+                    coverflow-effect-rotate="50"
+                    coverflow-effect-stretch="0"
+                    coverflow-effect-depth="100"
+                    coverflow-effect-modifier="1"
+                    coverflow-effect-slide-shadows="true"
+                >
+                    <swiper-slide>
+                        <img src="./assets/images/PHOTO-2024-03-29-23-59-02.jpg">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img src="./assets/images/PHOTO-2024-03-29-23-59-00.jpg">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img src="./assets/images/PHOTO-2024-03-29-23-50-14.jpg">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img src="./assets/images/PHOTO-2024-03-29-23-50-12.jpg">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img src="https://swiperjs.com/demos/images/nature-5.jpg">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img src="./assets/images/PHOTO-2024-03-29-23-50-14.jpg">
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+        </section>
+        <section class="section__container watch__video__container">
+            <h2 class="section__header">
+                watch our Last sermon
+            </h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui et laudantium natus repellat culpa harum
+            at vero minus odit, sit in, minima, iste vitae!
+            </p>
+            <div class="sermon__content">
+                <div class="sermon__banner">
+                    <iframe
+                        src="https://www.youtube.com/embed/pVp5iPWRhEw?si=Mmg7nqYrMGAkoNbi"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <div class="sermon__details">
+                    <div class="sermon__serie">
+                        <label>serie title:</label>
+                        <h2>Holy Communion</h2>
+                    </div>
+                    <div class="sermon__name">
+                        <label>sermon title:</label>
+                        <h2>mystere de la paque</h2>
+                    </div>
+                    <div class="sermon__speaker">
+                        <label>speaker:</label>
+                        <h2>Pasteur Isaac Muhindo</h2>
+                    </div>
+                    <button class="btn">Watch All Videos</button>
+                </div>
+            </div>
+        </section>
+        <section class="section_container gallery-container">
+            <h2 class="section__header">Our Service Gallery</h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas
+            repellendus sit necessitatibus consectetur labore!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ad doloremque magni modi voluptate facilis
+            ipsa dolor saepe similique optio!
+            </p>
+            <div class="container">
+                <div class="gallery">
+                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
+                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
+                    </a>
+                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
+                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
+                    </a>
+                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
+                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
+                    </a>
+                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
+                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
+                    </a>
+                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
+                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
+                    </a>
+                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
+                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section__container contact__container" id="contact">
+            <h2 class="section__header">
+                Contact Us
+            </h2>
+            <p class="section__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui et laudantium natus repellat culpa harum
+            at vero minus odit, sit in, minima, iste vitae!
+            </p>
+            <div class="contact__content">
+                <div class="contact__detail">
+                    <p class="contact-info">
+                        <span>addresse mail:</span>
+                        <br>
+                        eglisemat.management@gmail.com
+                    </p>
+                    <p class="contact-info">
+                        <span>numero de telephone:</span>
+                        +243994209741
+                    </p>
+                    <p class="contact-info">
+                        <span>Adresse locale :</span>
+                        Goma Q.katindo 3 paillotte, RDC
+                    </p>
+                    <p class="contact-info">
+                        <span>reseaux sociaux:</span>
+                        egliseMat
+                    </p>
+                    <div class="trainer__socials">
+                        <a href="#" class="facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#" class="twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="twitter">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact__form">
+                    <form action="" class="form" id="claculate-form">
+                        <input type="text" class="calculate__input" placeholder="votre nom">
+                        <input type="text" class="calculate__input" placeholder="votre address mail">
+                        <textarea
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="10"
+                            placeholder="ecrit votre message ici"
+                        ></textarea>
+                        <button class="btn">
+                            Envoyez
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section__container partners">
+        <h2 class="section__header">Our Partners</h2>
+        <p class="section__description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum atque neque praesentium quo corporis eos
+            quibusdam distinctio cupiditate impedit esse.
+        </p>
+        <div class="partners__cards">
+            <div class="card">
+                <img src="./assets/images/logo1.png" alt="">
+            </div>
+            <div class="card">
+                <img src="./assets/images/logo2.png" alt="">
+            </div>
+            <div class="card">
+                <img src="./assets/images/logo3.png" alt="">
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#">
+                        <img src="assets/images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="newsletter">
+                    <h3 class="news_header"> News letter</h3>
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+                    <div class="news__content">
+                        <input type="text" placeholder="Email Address">
+                        <button class="btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <div class="footer__links">
+                    <a href="#">NGO</a>
+                    <a href="#">franchise</a>
+                    <a href="#">Patnership</a>
+                    <a href="#">Network</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>About us</h4>
+                <div class="footer__links">
+                    <a href="#">NGO</a>
+                    <a href="#">franchise</a>
+                    <a href="#">Patnership</a>
+                    <a href="#">Network</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <div class="footer__links">
+                    <a href="#">contact us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & conditions</a>
+                </div>
+                <div class="footer__socials">
+                    <a href="#" class="facebook">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="#" class="instagram">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="#" class="twitter">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            copyright C 2024 tignelNbg.All right reserved.
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="./assets/js/lightbox-plus-jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+
+        var isVideoPlaying = false;
+        document.getElementById("liveButton").addEventListener("click", function () {
+            document.getElementById("videoPopup").style.display = "block";
+            if (isVideoPlaying) {
+                playLiveStream();
+            }
+        });
+
+        document.getElementById("closeButton").addEventListener("click", function () {
+            pauseLiveStream();
+            document.getElementById("videoPopup").style.display = "none";
+        });
+
+        function playLiveStream() {
+            isVideoPlaying = true;
+            var liveVideo = document.getElementById("liveVideo").querySelector("iframe");
+            liveVideo.src = liveVideo.src;
+        }
+
+        function pauseLiveStream() {
+            isVideoPlaying = false;
+            var liveVideo = document.getElementById("liveVideo").querySelector("iframe");
+            liveVideo.src = "";
+        }
+    </script>
+</body>
+</html>
