@@ -26,7 +26,6 @@ html.sr .load-hidden {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: solid 1px gray;
 }
 .section__container{
     max-width: var(--max-width);

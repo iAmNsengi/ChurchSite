@@ -1,8 +1,13 @@
 {% if messages %}
 {% for message in messages %}
-<div class="container-fluid p-0 text-center">
+<div class="container-fluid p-0 text-center" style="color: red;text-align: center; border: 1px solid red; padding: 5px;">
     <div class="alert {{message.tags}} alert-dismissible" role="alert">
-        <button class="close" role="button" data-dismiss="'alert" aria-label="close">
+        <button
+            class="close"
+            role="button"
+            data-dismiss="'alert"
+            aria-label="close"
+        >
             <span aria-hidden="true"></span>
         </button>
         {{message}}

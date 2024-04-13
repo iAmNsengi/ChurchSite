@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="{%static 'assets/css/signup.css' %} ">
+        <title>Log In</title>
+    </head>
+    <body>
+        <main class="container">
+            <div class="form-container">
+                <div class="header">
+                    <i class="ri-user-smile-fill"></i>
+                    <h2>AdminHub</h2>
+                </div>
+                <form method="POST" id="loginForm">
+                    {% csrf_token %}
+                    {%include 'messages.html' %}
+                    <div class="element">
+                        <label for="email">Email</label>
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            placeholder="Enter your username..."
+                        >
+                        <br>
+                        <span style="color: rgb(241, 61, 61);" id="emailError" class="error-email"></span>
+                    </div>
+                    <div class="element">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Enter your password..."
+                        >
+                        <br>
+                        <span style="color: rgb(241, 61, 61);" id="passwordError" class=""></span>
+                    </div>
+                    <button type="submit" class="btn">Log In</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
