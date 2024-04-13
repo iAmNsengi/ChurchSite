@@ -458,7 +458,6 @@ i{
     font-size: 1.2rem;
     color: var(--text-light);
     border-radius: 100%;
-    border: 1px solid var(--text-light);
 }
 .footer__socials a:hover{
     color:var(--primary-color);

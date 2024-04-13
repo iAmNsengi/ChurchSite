@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: solid 1px gray; 
 }
 a{
     text-decoration: none;
@@ -525,7 +524,6 @@ tr:hover{
     margin-top: .5rem;
     margin-bottom: .5rem;
     border-radius: 5px;
-    border: solid 1px gray;
 }
 
 

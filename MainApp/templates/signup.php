@@ -1,58 +1,3 @@
-<?php
-include "./assets/php/connect.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fullName = $_POST["fullName"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    // Validate input
-    $errors = array();
-
-    if (empty($fullName)) {
-        $errors[] = "Full name is required.";
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format.";
-    }
-
-    if (empty($password)) {
-        $errors[] = "Password is required.";
-    } elseif (strlen($password) < 6 || strlen($password) > 15 || $password == "password") {
-        $errors[] = "Password must be between 6 and 15 characters and cannot be 'password'.";
-    }
-
-    if (empty($errors)) {
-        // Create a prepared statement
-        $stmt = $conn->prepare("INSERT INTO admin (fullname, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $fullName, $email, $password); // Store password as plaintext
-
-        // Execute the statement
-        if ($stmt->execute()) {
-            // Set up session with user's name
-            session_start();
-            $_SESSION['fullname'] = $fullName;
-
-            // Redirect to dashboard upon successful registration
-            header("Location: dashboard.php");
-            exit(); // Ensure that subsequent code is not executed after redirection
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-
-        // Close the statement
-        $stmt->close();
-    } else {
-        // Output errors
-        foreach ($errors as $error) {
-            echo $error . "<br>";
-        }
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/signup.css">
+    <link rel="stylesheet" href="{%static 'assets/css/signup.css' %}">
     <title>Sign Up</title>
 </head>
 
@@ -148,10 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         })
-
-
     </script>
-
 </body>
 
 </html>

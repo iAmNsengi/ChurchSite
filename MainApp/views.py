@@ -7,6 +7,11 @@ from django.contrib import messages
 class Home(View):
     def get(self,request):
         return render(request,'index.html')
+    
+
+class Dashboard(View):
+    def get(self,request):
+        return render(request,'dashboard.html')
 
 class Login(View):
     def get(self,request):
