@@ -7,14 +7,16 @@ admin.site.register(Department)
 admin.site.register(Activity)
 admin.site.register(Program)
 admin.site.register(Thoughts)
-admin.site.register(Sermom)
+admin.site.register(Sermon)
 admin.site.register(Gallery)
 admin.site.register(Contact)
 admin.site.register(Partner)
 
 
 
-
+admin.site.site_header = "Churrh Admin"
+admin.site.site_title = "Church Admin Portal"
+admin.site.index_title = "Welcome to Church Portal"
 
 
 

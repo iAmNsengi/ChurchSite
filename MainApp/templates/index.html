@@ -101,18 +101,18 @@
         </header>
         <section class="section__container about__container" id="about">
             <div class="about__image">
-                <img src="./assets/images/IMG_0951.png" alt="About Image">
+                {% if settings.aboutImage.url != null %}
+                <img src="{{ settings.aboutImage.url }}" alt="About Image">
+                {% else %}
+                <img src="{%static 'assets/images/IMG_0951.png' %}" alt="About Image">
+                {% endif%}
             </div>
             <div class="about__content">
                 <h2 class="section__header">
                     Qui nous sommes
                 </h2>
                 <p class="section__description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quibusdam voluptatibus alias non
-                officiis error nihil. Laudantium voluptatum et harum! Quam quas cupiditate voluptatibus, nesciunt dolore
-                ad exercitationem. Obcaecati itaque vero harum quas ex et vel omnis accusantium placeat molestias!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus neque ab quibusdam nemo, ipsa
-                possimus vel
+                    {{settings.aboutUs}}
                 </p>
                 <div class="about__grid">
                     <div class="about__card">
@@ -122,8 +122,7 @@
                         <div>
                             <h4>Notre vision</h4>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet autem a mollitia
-                            voluptatem repellendus voluptas optio reiciendis sint!
+                                {{settings.ourVision}}
                             </p>
                         </div>
                     </div>
@@ -134,8 +133,7 @@
                         <div>
                             <h4>Notre mission</h4>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet autem a mollitia
-                            voluptatem repellendus voluptas optio reiciendis sint!
+                                {{settings.ourMission}}
                             </p>
                         </div>
                     </div>
@@ -146,8 +144,7 @@
                         <div>
                             <h4>Nos objectif</h4>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet autem a mollitia
-                            voluptatem repellendus voluptas optio reiciendis sint!
+                                {{settings.ourObjectives}}
                             </p>
                         </div>
                     </div>
@@ -159,9 +156,7 @@
             <div class="welcome__message__content">
                 <div class="welcome__description">
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum hic dolores pariatur laboriosam,
-                    mollitia perspiciatis quis autem facere, exercitationem commodi quam dignissimos rerum reiciendis
-                    veritatis esse ea nulla magni nobis.
+                        {{settings.pastorsMessage}}
                     </p>
                 </div>
                 <div class="welcome__video">

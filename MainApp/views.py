@@ -3,10 +3,17 @@ from django.views import View
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 from django.contrib import messages
+from .models import SiteSetting,Department,Activity,Program,Thoughts,Sermon,Gallery,Contact,Partner
 # Create your views here.
 class Home(View):
     def get(self,request):
-        return render(request,'index.html')
+        siteSettings = SiteSetting.objects.first()
+
+
+        context={
+            'settings':siteSettings,
+        }
+        return render(request,'index.html',context)
     
 
 class Dashboard(View):

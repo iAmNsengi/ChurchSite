@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class SiteSetting(models.Model):
     aboutUs = models.TextField(null=True, blank=True)
+    aboutImage = models.ImageField(upload_to='uploads/',null=True,blank=True)
     ourVision = models.TextField(null=True, blank=True)
     ourMission = models.TextField(null=True, blank=True)
     ourObjectives = models.TextField(null=True, blank=True)
@@ -11,8 +12,6 @@ class SiteSetting(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
     createdAt = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self) -> str:
-        return "Latest Setting " + self.updatedAt
 
 class Department(models.Model):
     name = models.CharField(max_length=100)
@@ -21,7 +20,7 @@ class Department(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.name + " " + self.updatedAt
+        return self.name 
     
 class Activity(models.Model):
     title = models.CharField(max_length=100)
@@ -30,7 +29,7 @@ class Activity(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.title + " " + self.updatedAt
+        return self.title 
 
 
 class Program(models.Model):
@@ -52,7 +51,7 @@ class Thoughts(models.Model):
     def __str__(self) -> str:
             return self.title 
     
-class Sermom(models.Model):
+class Sermon(models.Model):
     series_title = models.CharField(max_length=100)
     sermon_title = models.CharField(max_length=100)
     speaker = models.CharField(max_length=100)
