@@ -59,7 +59,7 @@
                         <a href="#pricing">Programmes</a>
                     </li>
                     <li class="link">
-                        <a href="faireundon.html">faire un Don</a>
+                        <a href="/donate">faire un Don</a>
                     </li>
                     <li class="link">
                         <a href="#contact" class="btn">Contactez nous</a>
@@ -83,16 +83,7 @@
             </div>
             <div id="videoPopup" class="popup">
                 <div id="liveVideo" class="video">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/vOtWKocW5n4?si=D4npwI6zuS9TFlPg"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
+                    {{liveVideo.url|safe}}
                 </div>
                 <button id="closeButton">
                     <i class="ri-close-large-line"></i>
@@ -160,12 +151,7 @@
                     </p>
                 </div>
                 <div class="welcome__video">
-                    <video
-                        src="{% static 'assets/images/VIDEO-2024-03-29-23-35-32.mp4' %}"
-                        controls
-                        autoplay
-                        muted
-                    ></video>
+                    {{liveVideo.pastorMessage|safe}}
                 </div>
             </div>
         </section>
@@ -178,18 +164,11 @@
             asperiores officiis tempore quas culpa neque autem consectetur, cum modi.
             </p>
             <div class="class__grid">
+                {% for department in departments %}
                 <div class="class__card">
-                    <img src="{% static 'assets/images/ecodim.jpg'%}" alt="">
+                    <img src="{{department.image.url}}" alt="">
                 </div>
-                <div class="class__card">
-                    <img src="{% static 'assets/images/ecodim.jpg'%}" alt="">
-                </div>
-                <div class="class__card">
-                    <img src="{% static 'assets/images/ecodim.jpg'%}" alt="">
-                </div>
-                <div class="class__card">
-                    <img src="{% static 'assets/images/ecodim.jpg' %}" alt="">
-                </div>
+                {% endfor %}
             </div>
         </section>
         <section class="section_container trainer__container" id="trainers">
@@ -201,17 +180,16 @@
             ipsa dolor saepe similique optio!
             </p>
             <div class="trainer__grid">
+                {% for activity in activities %}
                 <div class="trainer__card">
-                    <img src="{%static 'assets/images/event3.jpg' %}" alt="">
+                    <img src="{{activity.image.url}}" alt="">
                 </div>
                 <div class="trainer__card">
                     <div class="trainer__content">
-                        <h4>Apres la montagne</h4>
-                        <h5>Programme special d'enseignement</h5>
+                        <h4>{{activity.title}}</h4>
                         <hr>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis ipsum quae culpa
-                        nemo molestias?
+                            {{activity.description}}
                         </p>
                         <div class="trainer__socials">
                             <a href="#" class="facebook">
@@ -229,62 +207,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="trainer__card">
-                    <img src="{%static 'assets/images/event.jpg' %} " alt="">
-                </div>
-                <div class="trainer__card">
-                    <div class="trainer__content">
-                        <h4>soiree de la traversee</h4>
-                        <h5>moment d'action de grace et de dedicace</h5>
-                        <hr>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis ipsum quae culpa
-                        nemo molestias?
-                        </p>
-                        <div class="trainer__socials">
-                            <a href="#" class="facebook">
-                                <i class="ri-facebook-fill"></i>
-                            </a>
-                            <a href="#" class="google">
-                                <i class="ri-google-fill"></i>
-                            </a>
-                            <a href="#" class="instagram">
-                                <i class="ri-instagram-fill"></i>
-                            </a>
-                            <a href="#" class="twitter">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="trainer__card">
-                    <img src="assets/images/events.jpg" alt="">
-                </div>
-                <div class="trainer__card">
-                    <div class="trainer__content">
-                        <h4>Losambo 21</h4>
-                        <h5>seminaire de jeune et priere</h5>
-                        <hr>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis ipsum quae culpa
-                        nemo molestias?
-                        </p>
-                        <div class="trainer__socials">
-                            <a href="#" class="facebook">
-                                <i class="ri-facebook-fill"></i>
-                            </a>
-                            <a href="#" class="google">
-                                <i class="ri-google-fill"></i>
-                            </a>
-                            <a href="#" class="instagram">
-                                <i class="ri-instagram-fill"></i>
-                            </a>
-                            <a href="#" class="twitter">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
         <section class="section__container price__container" id="pricing">
@@ -296,42 +219,16 @@
             at vero minus odit, sit in, minima, iste vitae!
             </p>
             <div class="price__grid">
+                {% for program in programs %}
                 <div class="price__card">
                     <div class="price__content">
-                        <h4>Culte dominical</h4>
-                        <img src="assets/images/pricing1.png" alt="price">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda modi delectus recusandae</p>
-                        <hr>
-                        <h4>Informtion detailee</h4>
-                        <p>De 8h a 9h Reunion de l'ECODIM</p>
-                        <p>De 9h a 11h Reunion des Ambassadeurs</p>
-                    </div>
-                    <button class="btn">Vous etes les Bienvenu</button>
-                </div>
-                <div class="price__card">
-                    <div class="price__content">
-                        <h4>Soiree de Gloire</h4>
-                        <img src="assets/images/pricing2.png" alt="price">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda modi delectus recusandae</p>
-                        <hr>
-                        <h4>Service details</h4>
-                        <p>Every thursday</p>
-                        <p>from 3pm to 6pm</p>
-                    </div>
-                </div>
-                <div class="price__card">
-                    <div class="price__content">
-                        <h4>Open heaven service</h4>
-                        <img src="assets/images/pricing3.png" alt="price">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda modi delectus recusandae</p>
-                        <hr>
-                        <h4>Service details</h4>
-                        <p>PRAYER & PROPHECY</p>
-                        <p>Every Wesnday ans Saturday</p>
-                        <p>from 9am to 12 am</p>
+                        <h4>{{program.title}}</h4>
+                        <img src="{{program.image.url}}" alt="price">
+                        <p>{{program.description}}</p>
                     </div>
                     <button class="btn">Welcome</button>
                 </div>
+                {% endfor %}
             </div>
         </section>
         <section class="section_container gallery-quotes">
@@ -356,24 +253,11 @@
                     coverflow-effect-modifier="1"
                     coverflow-effect-slide-shadows="true"
                 >
+                    {% for thought in thoughts %}
                     <swiper-slide>
-                        <img src="{% static 'assets/images/PHOTO-2024-03-29-23-59-02.jpg' %}">
+                        <img src="{{thought.image.url}}">
                     </swiper-slide>
-                    <swiper-slide>
-                        <img src="./assets/images/PHOTO-2024-03-29-23-59-00.jpg">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="./assets/images/PHOTO-2024-03-29-23-50-14.jpg">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="./assets/images/PHOTO-2024-03-29-23-50-12.jpg">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="https://swiperjs.com/demos/images/nature-5.jpg">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="./assets/images/PHOTO-2024-03-29-23-50-14.jpg">
-                    </swiper-slide>
+                    {% endfor %}
                 </swiper-container>
             </div>
         </section>
@@ -387,27 +271,20 @@
             </p>
             <div class="sermon__content">
                 <div class="sermon__banner">
-                    <iframe
-                        src="https://www.youtube.com/embed/pVp5iPWRhEw?si=Mmg7nqYrMGAkoNbi"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
+                    {{sermon.url|safe}}
                 </div>
                 <div class="sermon__details">
                     <div class="sermon__serie">
                         <label>serie title:</label>
-                        <h2>Holy Communion</h2>
+                        <h2>{{sermon.series_title}}</h2>
                     </div>
                     <div class="sermon__name">
                         <label>sermon title:</label>
-                        <h2>mystere de la paque</h2>
+                        <h3>{{sermon.sermon_title}}</h3>
                     </div>
                     <div class="sermon__speaker">
                         <label>speaker:</label>
-                        <h2>Pasteur Isaac Muhindo</h2>
+                        <h3>{{ sermon.speaker}}</h3>
                     </div>
                     <button class="btn">Watch All Videos</button>
                 </div>
@@ -423,24 +300,11 @@
             </p>
             <div class="container">
                 <div class="gallery">
-                    <a href="assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
-                        <img src="{% static 'assets/images/PHOTO-2024-03-29-23-44-46.jpg' %}">
+                    {% for image in gallery%}
+                    <a href="{{image.image.url}}" data-lightbox="models" data-title="caption1">
+                        <img src="{{ image.image.url}}" alt="{{image.image.description}}">
                     </a>
-                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
-                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
-                    </a>
-                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
-                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
-                    </a>
-                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
-                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
-                    </a>
-                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
-                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
-                    </a>
-                    <a href="./assets/images/PHOTO-2024-03-29-23-44-46.jpg" data-lightbox="models" data-title="caption1">
-                        <img src="./assets/images/PHOTO-2024-03-29-23-44-46.jpg">
-                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -457,15 +321,15 @@
                     <p class="contact-info">
                         <span>addresse mail:</span>
                         <br>
-                        eglisemat.management@gmail.com
+                        {{contact.email}}
                     </p>
                     <p class="contact-info">
                         <span>numero de telephone:</span>
-                        +243994209741
+                        {{contact.phone}}
                     </p>
                     <p class="contact-info">
                         <span>Adresse locale :</span>
-                        Goma Q.katindo 3 paillotte, RDC
+                        {{contact.address}}
                     </p>
                     <p class="contact-info">
                         <span>reseaux sociaux:</span>
@@ -487,15 +351,35 @@
                     </div>
                 </div>
                 <div class="contact__form">
-                    <form action="" class="form" id="claculate-form">
-                        <input type="text" class="calculate__input" placeholder="votre nom">
-                        <input type="text" class="calculate__input" placeholder="votre address mail">
+                    <form
+                        action=""
+                        class="form"
+                        id="claculate-form "
+                        method="POST"
+                    >
+                        {% csrf_token %}
+                        <input
+                            type="text"
+                            class="calculate__input"
+                            placeholder="votre nom"
+                            name="name"
+                            required
+                        >
+                        <input
+                            type="text"
+                            class="calculate__input"
+                            type="email"
+                            placeholder="votre address mail"
+                            name="email"
+                            required
+                        >
                         <textarea
-                            name=""
+                            name="message"
                             id=""
                             cols="30"
                             rows="10"
                             placeholder="ecrit votre message ici"
+                            required
                         ></textarea>
                         <button class="btn">
                             Envoyez
@@ -512,15 +396,11 @@
             quibusdam distinctio cupiditate impedit esse.
         </p>
         <div class="partners__cards">
+            {% for partner in partners %}
             <div class="card">
-                <img src="{%static 'assets/images/logo1.png' %}" alt="">
+                <img src="{{partner.image.url}}" alt="">
             </div>
-            <div class="card">
-                <img src="./assets/images/logo2.png" alt="">
-            </div>
-            <div class="card">
-                <img src="./assets/images/logo3.png" alt="">
-            </div>
+            {% endfor %}
         </div>
     </section>
     <footer class="footer">

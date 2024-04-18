@@ -12,10 +12,15 @@ class SiteSetting(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
     createdAt = models.DateTimeField(auto_now_add=True)
 
+class LiveVideo(models.Model):
+    url = models.TextField(blank=True, null=True)
+    pastorMessage = models.TextField(blank=True, null=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
 
 class Department(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='uploads/')
+    image = models.ImageField(upload_to='uploads')
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
@@ -23,6 +28,7 @@ class Department(models.Model):
         return self.name 
     
 class Activity(models.Model):
+    image = models.ImageField(upload_to='uploads/', null=True, blank=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
     createdAt = models.DateTimeField(auto_now_add=True)
@@ -55,12 +61,12 @@ class Sermon(models.Model):
     series_title = models.CharField(max_length=100)
     sermon_title = models.CharField(max_length=100)
     speaker = models.CharField(max_length=100)
-    url = models.URLField()
+    url = models.TextField(null=True, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.title +" " + self.speaker
+        return self.sermon_title +" " + self.speaker
     
 class Gallery(models.Model):
     image = models.ImageField(upload_to='uploads/')
@@ -81,3 +87,11 @@ class Partner(models.Model):
     image = models.ImageField(upload_to='uploads/')
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
+
+class AccountDetail(models.Model):
+    bankname = models.CharField(max_length=100)
+    account_number = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='uploads/')
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+

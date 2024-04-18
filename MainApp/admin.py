@@ -11,6 +11,10 @@ admin.site.register(Sermon)
 admin.site.register(Gallery)
 admin.site.register(Contact)
 admin.site.register(Partner)
+admin.site.register(LiveVideo)
+admin.site.register(AccountDetail)
+
+
 
 
 
